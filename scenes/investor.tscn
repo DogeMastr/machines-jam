@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dfvefb4dmcsi5"]
+
+[ext_resource type="Texture2D" uid="uid://b6eei1kom3nwb" path="res://assets/sprites/glove.png" id="1_5bx2r"]
+[ext_resource type="Script" uid="uid://dciunsvw2osoi" path="res://scripts/investor.gd" id="2_7551k"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5bx2r"]
+radius = 1.2866211
+height = 3.605957
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qjkev"]
+radius = 2.6137924
+
+[node name="Investor" type="Sprite3D" unique_id=1489635441]
+billboard = 2
+texture = ExtResource("1_5bx2r")
+script = ExtResource("2_7551k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1195280844]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1338097577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16699219, 0)
+shape = SubResource("CapsuleShape3D_5bx2r")
+
+[node name="InteractionZone" type="Area3D" parent="." unique_id=896660884]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone" unique_id=976098]
+shape = SubResource("SphereShape3D_qjkev")
+
+[connection signal="body_shape_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_shape_entered"]
+[connection signal="body_shape_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_shape_exited"]
