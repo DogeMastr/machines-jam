@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ngemyg35fdc8"]
+
+[ext_resource type="Script" uid="uid://b0lb6mbpw1w45" path="res://scripts/hand.gd" id="1_eyfoh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cmdsa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_k7pjy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eyfoh"]
+radius = 0.55
+
+[node name="Hand" type="RigidBody3D" unique_id=802778480]
+collision_layer = 8
+collision_mask = 5
+mass = 0.1
+script = ExtResource("1_eyfoh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=365950881]
+shape = SubResource("SphereShape3D_cmdsa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=604545671]
+mesh = SubResource("SphereMesh_k7pjy")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=46146011]
+collision_layer = 8
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=243914450]
+shape = SubResource("SphereShape3D_eyfoh")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

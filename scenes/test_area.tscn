@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://w66qu3017auw" path="res://scripts/level.gd" id="1_vtm10"]
 [ext_resource type="PackedScene" uid="uid://b5wy2xn32hq8m" path="res://scenes/player.tscn" id="1_yldxj"]
 [ext_resource type="PackedScene" uid="uid://dfvefb4dmcsi5" path="res://scenes/investor.tscn" id="2_f0p7x"]
+[ext_resource type="PackedScene" uid="uid://ngemyg35fdc8" path="res://scenes/hand.tscn" id="4_a0f05"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0p7x"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -34,7 +35,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Investor" parent="." unique_id=855643183 instance=ExtResource("2_f0p7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9503074, -4.4408617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7162185, -4.4408617)
 
 [node name="Player" parent="." unique_id=1015928089 instance=ExtResource("1_yldxj")]
 unique_name_in_owner = true
@@ -45,6 +46,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47221792, 0)
 mesh = SubResource("BoxMesh_yldxj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1878492801]
+collision_mask = 14
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1918326470]
 shape = SubResource("ConcavePolygonShape3D_yldxj")
+
+[node name="Hand" parent="." unique_id=802778480 instance=ExtResource("4_a0f05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2436297, 1.8424468, -2.9203348)

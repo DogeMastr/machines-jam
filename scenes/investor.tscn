@@ -10,6 +10,8 @@ size = Vector3(3.1618652, 5.1395874, 0.33062744)
 radius = 13.0182
 
 [node name="Investor" type="RigidBody3D" unique_id=855643183]
+collision_layer = 4
+collision_mask = 11
 mass = 0.035
 freeze = true
 script = ExtResource("2_7551k")
