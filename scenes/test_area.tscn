@@ -3,6 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://b5wy2xn32hq8m" path="res://scenes/player.tscn" id="1_yldxj"]
 [ext_resource type="PackedScene" uid="uid://dfvefb4dmcsi5" path="res://scenes/investor.tscn" id="2_f0p7x"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0p7x"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vtm10"]
+sky_material = SubResource("ProceduralSkyMaterial_f0p7x")
+
+[sub_resource type="Environment" id="Environment_a0f05"]
+background_mode = 2
+sky = SubResource("Sky_vtm10")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_yldxj"]
 size = Vector3(10.165, 1, 13.685)
 
@@ -10,6 +23,16 @@ size = Vector3(10.165, 1, 13.685)
 data = PackedVector3Array(-5.0825, 0.5, 6.8424997, 5.0825, 0.5, 6.8424997, -5.0825, -0.5, 6.8424997, 5.0825, 0.5, 6.8424997, 5.0825, -0.5, 6.8424997, -5.0825, -0.5, 6.8424997, 5.0825, 0.5, -6.8424997, -5.0825, 0.5, -6.8424997, 5.0825, -0.5, -6.8424997, -5.0825, 0.5, -6.8424997, -5.0825, -0.5, -6.8424997, 5.0825, -0.5, -6.8424997, 5.0825, 0.5, 6.8424997, 5.0825, 0.5, -6.8424997, 5.0825, -0.5, 6.8424997, 5.0825, 0.5, -6.8424997, 5.0825, -0.5, -6.8424997, 5.0825, -0.5, 6.8424997, -5.0825, 0.5, -6.8424997, -5.0825, 0.5, 6.8424997, -5.0825, -0.5, -6.8424997, -5.0825, 0.5, 6.8424997, -5.0825, -0.5, 6.8424997, -5.0825, -0.5, -6.8424997, 5.0825, 0.5, 6.8424997, -5.0825, 0.5, 6.8424997, 5.0825, 0.5, -6.8424997, -5.0825, 0.5, 6.8424997, -5.0825, 0.5, -6.8424997, 5.0825, 0.5, -6.8424997, -5.0825, -0.5, 6.8424997, 5.0825, -0.5, 6.8424997, -5.0825, -0.5, -6.8424997, 5.0825, -0.5, 6.8424997, 5.0825, -0.5, -6.8424997, -5.0825, -0.5, -6.8424997)
 
 [node name="Node3D" type="Node3D" unique_id=893753131]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1151015222]
+environment = SubResource("Environment_a0f05")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=123488822]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Investor" parent="." unique_id=855643183 instance=ExtResource("2_f0p7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9503074, -4.4408617)
 
 [node name="CharacterBody3D" parent="." unique_id=1015928089 instance=ExtResource("1_yldxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08276725, 1.8854736, 4.9692345)
@@ -22,6 +45,3 @@ mesh = SubResource("BoxMesh_yldxj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1918326470]
 shape = SubResource("ConcavePolygonShape3D_yldxj")
-
-[node name="Sprite3D" parent="." unique_id=1489635441 instance=ExtResource("2_f0p7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27721357, 2.017782, -4.974178)

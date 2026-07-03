@@ -1,32 +1,37 @@
 [gd_scene format=3 uid="uid://dfvefb4dmcsi5"]
 
-[ext_resource type="Texture2D" uid="uid://b6eei1kom3nwb" path="res://assets/sprites/glove.png" id="1_5bx2r"]
+[ext_resource type="Texture2D" uid="uid://c6pv3fwynnnb2" path="res://assets/sprites/man_game_tim.png" id="1_7551k"]
 [ext_resource type="Script" uid="uid://dciunsvw2osoi" path="res://scripts/investor.gd" id="2_7551k"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5bx2r"]
-radius = 1.2866211
-height = 3.605957
+[sub_resource type="BoxShape3D" id="BoxShape3D_7551k"]
+size = Vector3(3.1618652, 5.1395874, 0.33062744)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qjkev"]
-radius = 2.6137924
+radius = 13.0182
 
-[node name="Investor" type="Sprite3D" unique_id=1489635441]
-billboard = 2
-texture = ExtResource("1_5bx2r")
+[node name="Investor" type="RigidBody3D" unique_id=855643183]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 0.035
+freeze = true
 script = ExtResource("2_7551k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1195280844]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1338097577]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16699219, 0)
-shape = SubResource("CapsuleShape3D_5bx2r")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1338097577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1517334, -0.0831604, -0.030426025)
+shape = SubResource("BoxShape3D_7551k")
 
 [node name="InteractionZone" type="Area3D" parent="." unique_id=896660884]
+transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, 0, 0)
 collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone" unique_id=976098]
 shape = SubResource("SphereShape3D_qjkev")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1489635441]
+transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_7551k")
 
 [connection signal="body_shape_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_shape_entered"]
 [connection signal="body_shape_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_shape_exited"]
