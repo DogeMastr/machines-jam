@@ -10,8 +10,6 @@ size = Vector3(3.1618652, 5.1395874, 0.33062744)
 radius = 13.0182
 
 [node name="Investor" type="RigidBody3D" unique_id=855643183]
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 mass = 0.035
 freeze = true
 script = ExtResource("2_7551k")
@@ -30,7 +28,6 @@ shape = SubResource("SphereShape3D_qjkev")
 
 [node name="Sprite" type="Sprite3D" parent="." unique_id=1489635441]
 transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, 0, 0)
-billboard = 2
 texture = ExtResource("1_7551k")
 
 [connection signal="body_shape_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_shape_entered"]

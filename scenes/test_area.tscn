@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dafshr7vl4n3d"]
 
+[ext_resource type="Script" uid="uid://w66qu3017auw" path="res://scripts/level.gd" id="1_vtm10"]
 [ext_resource type="PackedScene" uid="uid://b5wy2xn32hq8m" path="res://scenes/player.tscn" id="1_yldxj"]
 [ext_resource type="PackedScene" uid="uid://dfvefb4dmcsi5" path="res://scenes/investor.tscn" id="2_f0p7x"]
 
@@ -23,6 +24,7 @@ size = Vector3(10.165, 1, 13.685)
 data = PackedVector3Array(-5.0825, 0.5, 6.8424997, 5.0825, 0.5, 6.8424997, -5.0825, -0.5, 6.8424997, 5.0825, 0.5, 6.8424997, 5.0825, -0.5, 6.8424997, -5.0825, -0.5, 6.8424997, 5.0825, 0.5, -6.8424997, -5.0825, 0.5, -6.8424997, 5.0825, -0.5, -6.8424997, -5.0825, 0.5, -6.8424997, -5.0825, -0.5, -6.8424997, 5.0825, -0.5, -6.8424997, 5.0825, 0.5, 6.8424997, 5.0825, 0.5, -6.8424997, 5.0825, -0.5, 6.8424997, 5.0825, 0.5, -6.8424997, 5.0825, -0.5, -6.8424997, 5.0825, -0.5, 6.8424997, -5.0825, 0.5, -6.8424997, -5.0825, 0.5, 6.8424997, -5.0825, -0.5, -6.8424997, -5.0825, 0.5, 6.8424997, -5.0825, -0.5, 6.8424997, -5.0825, -0.5, -6.8424997, 5.0825, 0.5, 6.8424997, -5.0825, 0.5, 6.8424997, 5.0825, 0.5, -6.8424997, -5.0825, 0.5, 6.8424997, -5.0825, 0.5, -6.8424997, 5.0825, 0.5, -6.8424997, -5.0825, -0.5, 6.8424997, 5.0825, -0.5, 6.8424997, -5.0825, -0.5, -6.8424997, 5.0825, -0.5, 6.8424997, 5.0825, -0.5, -6.8424997, -5.0825, -0.5, -6.8424997)
 
 [node name="Node3D" type="Node3D" unique_id=893753131]
+script = ExtResource("1_vtm10")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1151015222]
 environment = SubResource("Environment_a0f05")
@@ -34,7 +36,8 @@ shadow_enabled = true
 [node name="Investor" parent="." unique_id=855643183 instance=ExtResource("2_f0p7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9503074, -4.4408617)
 
-[node name="CharacterBody3D" parent="." unique_id=1015928089 instance=ExtResource("1_yldxj")]
+[node name="Player" parent="." unique_id=1015928089 instance=ExtResource("1_yldxj")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08276725, 1.8854736, 4.9692345)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=985323315]

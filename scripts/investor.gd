@@ -1,14 +1,19 @@
 extends RigidBody3D
 
 var interactable = false
+var has_been_interacted_with = false
 
-var player
+@onready var player = %Player
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not has_been_interacted_with:
+		var looking = player.global_position
+		looking.y == global_position.y
+		$Sprite.look_at(looking, Vector3.UP, true)
+		$CollisionShape3D.look_at(looking, Vector3.UP, true)
+	
 	if interactable:
 		if Eventbus.interactable_object.find(self) == -1:
 			Eventbus.interactable_object.append(self)
@@ -18,7 +23,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_interaction_zone_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
-	player = body
 	interactable = true
 	pass # Replace with function body.
 
@@ -30,9 +34,6 @@ func run_interaction():
 	print(self, " running interaction")
 	freeze = false
 	$Sprite.billboard = false
+	has_been_interacted_with = true
 #	snap sprite and collisionshape to face the player
-	var looking = player.global_position
-	looking.y == global_position.y
-	$Sprite.look_at(looking, Vector3.UP, true)
-	$CollisionShape3D.look_at(looking, Vector3.UP, true)
 	pass

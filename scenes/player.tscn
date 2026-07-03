@@ -7,7 +7,7 @@
 
 [sub_resource type="Environment" id="Environment_3vyb7"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1015928089]
+[node name="Player" type="CharacterBody3D" unique_id=1015928089]
 collision_layer = 9
 script = ExtResource("1_3vyb7")
 
