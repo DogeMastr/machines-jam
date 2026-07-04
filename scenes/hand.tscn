@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://b0lb6mbpw1w45" path="res://scripts/hand.gd" id="1_eyfoh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cmdsa"]
+radius = 0.3
 
 [sub_resource type="SphereMesh" id="SphereMesh_k7pjy"]
+radius = 0.25
+height = 0.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eyfoh"]
-radius = 0.55
+radius = 0.3
 
 [node name="Hand" type="RigidBody3D" unique_id=802778480]
 collision_layer = 8

@@ -59,7 +59,5 @@ func _physics_process(delta):
 	velocity.x = direction.x * walk_speed
 	velocity.z = direction.z * walk_speed
 
-
-
 	# This is the Godot function that does moving and colliding.
 	move_and_slide()

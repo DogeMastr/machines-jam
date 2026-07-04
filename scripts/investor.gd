@@ -10,9 +10,9 @@ var has_been_interacted_with = false
 func _process(delta: float) -> void:
 	if not has_been_interacted_with:
 		var looking = player.global_position
-		looking.y == global_position.y
-		$Sprite.look_at(looking, Vector3.UP, true)
-		$CollisionShape3D.look_at(looking, Vector3.UP, true)
+		looking.y == global_position.y - 5000
+		look_at(looking)
+		rotation.x = clampf(rotation.x, -.4, .4)
 	
 	if interactable:
 		if Eventbus.interactable_object.find(self) == -1:
@@ -27,7 +27,7 @@ func _on_interaction_zone_body_shape_entered(body_rid: RID, body: Node3D, body_s
 	pass # Replace with function body.
 
 func _on_interaction_zone_body_shape_exited(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
-	interactable = false	
+	interactable = false
 	pass # Replace with function body.
 	
 func run_interaction():
@@ -35,5 +35,5 @@ func run_interaction():
 	freeze = false
 	$Sprite.billboard = false
 	has_been_interacted_with = true
-#	snap sprite and collisionshape to face the player
+	# snap sprite and collisionshape to face the player
 	pass
