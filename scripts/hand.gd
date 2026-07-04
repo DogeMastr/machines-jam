@@ -5,14 +5,20 @@ extends RigidBody3D
 func _ready() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	await get_tree().create_timer(7).timeout
-	queue_free()
-
-
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.get_collision_layer_value(1):
+	if not body:
+		return
+
+	if body.get_collision_layer_value(5):
+		if "health" in body:
+			body.health -= 1.0
+			if body.health <= 0.0:
+				body.queue_free()
+
+	elif body.get_collision_layer_value(1):
 		await get_tree().create_timer(2).timeout
-		queue_free()
+
+	$AnimationPlayer.play("delete")

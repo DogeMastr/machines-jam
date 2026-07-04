@@ -11,14 +11,12 @@ func physics_update(delta: float) -> void:
 	var next_pos := nav_agent.get_next_path_position()
 	var direction := (next_pos - body.global_position).normalized()
 
-	
 	body.velocity = direction * speed
 	body.look_at(body.global_position + direction)
 
 	# THIS DOESNT WORK? I THINK I NEED A NAVIGATION ZONE OR SOMETHING I DONT KNOWWWWW
 	#print(direction)
 	body.move_and_slide()
-
 	check_states()
 	
 func check_states():

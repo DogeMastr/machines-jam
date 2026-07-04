@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckix253u0v2i6"]
 
 [ext_resource type="Script" uid="uid://ck4etbvmjsk4h" path="res://scripts/enemy/enemy_statemachine.gd" id="1_4ra3w"]
-[ext_resource type="Script" uid="uid://c6xrac8keugbo" path="res://scripts/enemy/enemy_physics.gd" id="1_nenq2"]
+[ext_resource type="Script" uid="uid://bm30rvpnl2xn5" path="res://scripts/enemy/enemy_data.gd" id="1_nenq2"]
 [ext_resource type="Script" uid="uid://c3m7tosyk1iir" path="res://scripts/enemy/idle.gd" id="2_4ra3w"]
 [ext_resource type="Script" uid="uid://bhc3c6cgr4aca" path="res://scripts/enemy/spawn.gd" id="3_4ra3w"]
 [ext_resource type="Script" uid="uid://shgflu70ptx7" path="res://scripts/enemy/chase.gd" id="4_5uy6h"]
@@ -11,6 +11,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tegq"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=80878534]
+collision_layer = 17
 floor_stop_on_slope = false
 floor_block_on_wall = false
 floor_max_angle = 1.0471976
