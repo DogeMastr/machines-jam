@@ -14,11 +14,12 @@ func physics_update(delta: float) -> void:
 	
 	body.velocity = direction * speed
 	body.look_at(body.global_position + direction)
-#	THIS DOESNT WORK? I THINK I NEED A NAVIGATION ZONE OR SOMETHING I DONT KNOWWWWW
-	print(direction)
+
+	# THIS DOESNT WORK? I THINK I NEED A NAVIGATION ZONE OR SOMETHING I DONT KNOWWWWW
+	#print(direction)
 	body.move_and_slide()
 
-	#check_states()
+	check_states()
 	
 func check_states():
 	if not player:
@@ -26,5 +27,5 @@ func check_states():
 		return
 	
 	var distance := body.global_position.distance_to(player.global_position)
-	if distance > 2:
+	if distance < 2:
 		state_machine.change_state($"../Explode")

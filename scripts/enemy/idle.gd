@@ -5,6 +5,5 @@ func physics_update(delta):
 	pass
 	
 func check_states():
-	#print(player)
 	if player:
 		state_machine.change_state($"../Chase")

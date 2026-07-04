@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bhc3c6cgr4aca" path="res://scripts/enemy/spawn.gd" id="3_4ra3w"]
 [ext_resource type="Script" uid="uid://shgflu70ptx7" path="res://scripts/enemy/chase.gd" id="4_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://b6eei1kom3nwb" path="res://assets/sprites/glove.png" id="5_c4w8v"]
+[ext_resource type="Script" uid="uid://dl5hur3rtdada" path="res://scripts/enemy/explode.gd" id="5_xwavj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tegq"]
 
@@ -24,6 +25,7 @@ script = ExtResource("2_4ra3w")
 script = ExtResource("4_5uy6h")
 
 [node name="Explode" type="Node" parent="StateMachine" unique_id=835490061]
+script = ExtResource("5_xwavj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1157946060]
 shape = SubResource("CapsuleShape3D_8tegq")
