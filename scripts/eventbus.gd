@@ -9,6 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+#	this button is numpad +
 	if Input.is_action_just_pressed("debug_console"):
 		print(interactable_object)
 	pass
