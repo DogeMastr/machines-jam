@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b06owfhgk2671"]
+
+[ext_resource type="PackedScene" uid="uid://b5wy2xn32hq8m" path="res://scenes/player.tscn" id="2_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://b8gibd0f80etv" path="res://scenes/office_building.tscn" id="2_paw1w"]
+
+[node name="Node3D" type="Node3D" unique_id=1966855703]
+
+[node name="Player" parent="." unique_id=1015928089 instance=ExtResource("2_j6w7d")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08276725, 9.612394, 15.371489)
+
+[node name="office_building" parent="." unique_id=669013046 instance=ExtResource("2_paw1w")]

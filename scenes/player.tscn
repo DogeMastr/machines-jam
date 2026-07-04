@@ -22,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7820407, 0)
 environment = SubResource("Environment_3vyb7")
 
 [node name="UI" parent="Head/Camera3D" unique_id=1153108352 instance=ExtResource("2_g2els")]
+
+[node name="Muzzle" type="Marker3D" parent="Head" unique_id=1440909728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1594199, -0.6577791)

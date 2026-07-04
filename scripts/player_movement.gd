@@ -1,15 +1,16 @@
 extends CharacterBody3D
 
-@export var walk_speed = 5.0
+@export var walk_speed = 20.0
 @export var gravity = 20.8
 @export var jump_strength = 7.0
 
 @export var mouse_sensitivity = 0.002
 
-@export var bullet_speed = 50.0
+@export var bullet_speed = 100.0
 
 # Node References
 @onready var head = $Head
+@onready var muzzle = $Head/Muzzle
 @onready var hand_bullet = preload("res://scenes/hand.tscn")
 
 
@@ -35,9 +36,9 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			var bullet = hand_bullet.instantiate()
 			get_tree().root.get_child(0).add_child(bullet)
-			bullet.global_position = head.global_position
-			bullet.rotation = rotation
-			bullet.apply_force(Vector3(1, 1, 1) * bullet_speed * -head.global_basis.z)
+			bullet.global_position = muzzle.global_position
+			bullet.rotation = muzzle.rotation
+			bullet.apply_force((Vector3(1, 1, 1) * bullet_speed * -head.global_basis.z) + velocity)
 		
 
 func _physics_process(delta):
