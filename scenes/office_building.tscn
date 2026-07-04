@@ -7,7 +7,7 @@ data = PackedVector3Array(0.6667, 3, 0.86149997, 1, 3, 0.4475, 1, 3, 0.8619, 1, 
 
 [node name="office_building" unique_id=669013046 instance=ExtResource("1_wchon")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Level" parent_id_path=PackedInt32Array(1064932637) index="0" unique_id=1277528595]
+[node name="StaticBody3D" type="StaticBody3D" parent="Level" parent_id_path=PackedInt32Array(1064932637) index="0" unique_id=1277528595 groups=["navmesh"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D" index="0" unique_id=602549471]
 shape = SubResource("ConcavePolygonShape3D_jpn6w")

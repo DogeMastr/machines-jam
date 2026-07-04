@@ -10,7 +10,7 @@ func physics_update(delta: float) -> void:
 	
 	var next_pos := nav_agent.get_next_path_position()
 	var direction := (next_pos - body.global_position).normalized()
-	direction.y = 0
+
 	
 	body.velocity = direction * speed
 	body.look_at(body.global_position + direction)
