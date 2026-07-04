@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		look_at(looking)
 		rotation.x = clampf(rotation.x, -.4, .4)
 	
-	if interactable:
+	if interactable and not has_been_interacted_with:
 		if Eventbus.interactable_object.find(self) == -1:
 			Eventbus.interactable_object.append(self)
 	else:
