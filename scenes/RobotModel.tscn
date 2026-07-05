@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bdeujcypevd3l"]
+
+[ext_resource type="PackedScene" uid="uid://biw0dmnq2p0y1" path="res://assets/models/robotguyfinal.fbx" id="1_0ru07"]
+[ext_resource type="Texture2D" uid="uid://d2li55qwsvl5p" path="res://assets/textures/RobotTexture.png" id="2_fwbnn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12cn7"]
+albedo_texture = ExtResource("2_fwbnn")
+
+[node name="robotguyfinal" unique_id=1522451747 instance=ExtResource("1_0ru07")]
+
+[node name="elbow_joint" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="0" unique_id=1025643212]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="eye" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="1" unique_id=18181622]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="hand" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="2" unique_id=907670341]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="head" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="3" unique_id=863300312]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="hip" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="4" unique_id=1742466077]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="jaw" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="5" unique_id=2060062011]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="leg" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="6" unique_id=625019754]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="lower_arm" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="7" unique_id=1429334677]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="lower_shoulder_joint" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="8" unique_id=1890903676]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="neck" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="9" unique_id=1461853126]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="shoulder" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="10" unique_id=1474737066]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="tie" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="11" unique_id=1834114663]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="torso" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="12" unique_id=1287969009]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="upper_arm" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="13" unique_id=1606520117]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="upper_shoulder_joint" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="14" unique_id=1210826554]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")
+
+[node name="wheel" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1789520980) index="15" unique_id=331690351]
+surface_material_override/0 = SubResource("StandardMaterial3D_12cn7")

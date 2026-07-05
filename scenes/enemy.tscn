@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bhc3c6cgr4aca" path="res://scripts/enemy/spawn.gd" id="3_4ra3w"]
 [ext_resource type="Script" uid="uid://shgflu70ptx7" path="res://scripts/enemy/chase.gd" id="4_5uy6h"]
 [ext_resource type="Script" uid="uid://dl5hur3rtdada" path="res://scripts/enemy/explode.gd" id="5_xwavj"]
-[ext_resource type="PackedScene" uid="uid://bjsf40peiasa6" path="res://assets/models/robotguyAnimated.fbx" id="7_nenq2"]
+[ext_resource type="PackedScene" uid="uid://bdeujcypevd3l" path="res://scenes/RobotModel.tscn" id="7_nenq2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md484"]
 
@@ -39,6 +39,6 @@ shape = SubResource("CapsuleShape3D_md484")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1875910521]
 unique_name_in_owner = true
 
-[node name="Model" parent="." unique_id=2142310012 instance=ExtResource("7_nenq2")]
+[node name="Model" parent="." unique_id=1522451747 instance=ExtResource("7_nenq2")]
 unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.034128, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.0535729, 0)
