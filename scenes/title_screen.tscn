@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cbf42lnc6frnn"]
+
+[ext_resource type="PackedScene" uid="uid://ckix253u0v2i6" path="res://scenes/enemy.tscn" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://cudgntqlmj7me" path="res://scripts/title_screen.gd" id="1_s4lrb"]
+[ext_resource type="PackedScene" uid="uid://ft8hgyjrtfjv" path="res://scenes/level_for_machine_jam.tscn" id="2_sa3yf"]
+[ext_resource type="Theme" uid="uid://8k1g88c6eoak" path="res://assets/title_theme.tres" id="4_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://bk16f3kva3g5i" path="res://assets/textures/button_rectangle_depth_line.png" id="5_e54dn"]
+[ext_resource type="Texture2D" uid="uid://b7x07ph2gfune" path="res://assets/textures/OHGLogo.png" id="6_3yumr"]
+[ext_resource type="Texture2D" uid="uid://de35clen7jc7k" path="res://assets/textures/button_rectangle_depth_border.png" id="6_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://cqu0r8fxb6ji7" path="res://assets/textures/button_rectangle_border.png" id="6_mykxm"]
+
+[sub_resource type="Environment" id="Environment_sa3yf"]
+ambient_light_color = Color(1, 0.65230244, 0.967707, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_s4lrb"]
+
+[sub_resource type="Compositor" id="Compositor_mgrm8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cs5ya"]
+texture = ExtResource("5_e54dn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tklts"]
+texture = ExtResource("6_mykxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mykxm"]
+texture = ExtResource("6_cs5ya")
+
+[node name="Node3D" type="Node3D" unique_id=1010761361]
+script = ExtResource("1_s4lrb")
+
+[node name="Enemy" parent="." unique_id=80878534 instance=ExtResource("1_fgkus")]
+transform = Transform3D(-0.30888417, -0.16530386, 0.9366244, 0, 0.9847805, 0.17380287, -0.9510997, 0.053684954, -0.3041831, 13.410683, 15.006376, 22.939507)
+
+[node name="level_for_machine_jam" parent="." unique_id=440397799 instance=ExtResource("2_sa3yf")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1826264349]
+environment = SubResource("Environment_sa3yf")
+camera_attributes = SubResource("CameraAttributesPractical_s4lrb")
+compositor = SubResource("Compositor_mgrm8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1034135231]
+transform = Transform3D(-0.8660254, -0.43301275, 0.25000003, -0.09340777, 0.63130915, 0.7698856, -0.49119756, 0.6433885, -0.5871765, 14.653914, 16.13508, 23.529163)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1109254787]
+transform = Transform3D(-0.6929866, -0.13468474, 0.70825815, -9.873255e-09, 0.98239505, 0.18681552, -0.7209505, 0.12946065, -0.68078655, 16.374624, 15.996662, 21.33659)
+fov = 34.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=848458837]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera3D/CanvasLayer" unique_id=1015805113]
+offset_left = 245.0
+offset_top = 147.0
+offset_right = 610.0
+offset_bottom = 335.0
+theme = ExtResource("4_mgrm8")
+text = "CORPRATE
+SHAKEDOWN"
+scroll_active = false
+
+[node name="PlayButton" type="Button" parent="Camera3D/CanvasLayer" unique_id=2070210802]
+offset_left = 228.0
+offset_top = 614.0
+offset_right = 628.0
+offset_bottom = 763.0
+theme = ExtResource("4_mgrm8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_cs5ya")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tklts")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mykxm")
+text = "Play"
+
+[node name="OHGButton" type="LinkButton" parent="Camera3D/CanvasLayer" unique_id=46434127]
+offset_left = 1210.0
+offset_top = 589.0
+offset_right = 1419.0
+offset_bottom = 788.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("4_mgrm8")
+uri = "https://one-heart-games.itch.io/"
+
+[node name="OhgLogo" type="Sprite2D" parent="Camera3D/CanvasLayer/OHGButton" unique_id=1095708849]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_3yumr")
+centered = false
+
+[connection signal="pressed" from="Camera3D/CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
