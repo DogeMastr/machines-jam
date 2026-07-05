@@ -21,4 +21,4 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_update(delta)
 	
-	print(%Model/AnimationPlayer.current_animation)
+	#print(%Model/AnimationPlayer.current_animation)
