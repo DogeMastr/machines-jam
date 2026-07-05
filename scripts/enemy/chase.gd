@@ -2,6 +2,11 @@ extends EnemyState
 
 @export var speed = 4.5
 
+func enter():
+	model.current_animation = "Armature|Walk"
+	model.get_animation("Armature|Walk").loop_mode = (Animation.LOOP_LINEAR)
+	model.play()
+
 func physics_update(delta: float) -> void:
 	if not player:
 		return
@@ -12,7 +17,7 @@ func physics_update(delta: float) -> void:
 	var direction := (next_pos - body.global_position).normalized()
 
 	body.velocity = direction * speed
-	body.look_at(body.global_position + direction)
+	body.look_at(body.global_position - direction)
 
 	# THIS DOESNT WORK? I THINK I NEED A NAVIGATION ZONE OR SOMETHING I DONT KNOWWWWW
 	#print(direction)

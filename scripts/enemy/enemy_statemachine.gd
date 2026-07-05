@@ -11,7 +11,8 @@ func _ready() -> void:
 			child.player = player
 			child.nav_agent = %NavigationAgent3D
 			child.body = self.get_parent()
-	
+			child.model = %Model/AnimationPlayer
+			
 	if inital_state:
 		current_state = inital_state
 		current_state.enter()
@@ -20,4 +21,4 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_update(delta)
 	
-	#print(current_state)
+	print(%Model/AnimationPlayer.current_animation)

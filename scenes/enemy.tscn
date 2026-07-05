@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://c3m7tosyk1iir" path="res://scripts/enemy/idle.gd" id="2_4ra3w"]
 [ext_resource type="Script" uid="uid://bhc3c6cgr4aca" path="res://scripts/enemy/spawn.gd" id="3_4ra3w"]
 [ext_resource type="Script" uid="uid://shgflu70ptx7" path="res://scripts/enemy/chase.gd" id="4_5uy6h"]
-[ext_resource type="Texture2D" uid="uid://b6eei1kom3nwb" path="res://assets/sprites/glove.png" id="5_c4w8v"]
 [ext_resource type="Script" uid="uid://dl5hur3rtdada" path="res://scripts/enemy/explode.gd" id="5_xwavj"]
+[ext_resource type="PackedScene" uid="uid://bjsf40peiasa6" path="res://assets/models/robotguyAnimated.fbx" id="7_nenq2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tegq"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md484"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=80878534]
 collision_layer = 17
@@ -34,11 +34,11 @@ script = ExtResource("4_5uy6h")
 script = ExtResource("5_xwavj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1157946060]
-shape = SubResource("CapsuleShape3D_8tegq")
+shape = SubResource("CapsuleShape3D_md484")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1875910521]
 unique_name_in_owner = true
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2054805789]
-transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, 0, 0)
-texture = ExtResource("5_c4w8v")
+[node name="Model" parent="." unique_id=2142310012 instance=ExtResource("7_nenq2")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.034128, 0)
