@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn1co4qccs6os"]
+
+[ext_resource type="Texture2D" uid="uid://cb30hi2r4dthy" path="res://assets/textures/roof_seamless.png" id="1_agh2s"]
+
+[resource]
+albedo_texture = ExtResource("1_agh2s")
+uv1_scale = Vector3(392, 392, 392)

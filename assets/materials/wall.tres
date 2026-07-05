@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d36uucg8icjlg"]
+
+[ext_resource type="Texture2D" uid="uid://6credkwoochh" path="res://assets/textures/wall_seamless.png" id="1_blum3"]
+
+[resource]
+albedo_texture = ExtResource("1_blum3")
+uv1_scale = Vector3(16, 16, 16)
+uv1_triplanar_sharpness = 0.65975326
