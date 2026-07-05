@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cvnhud7p4ygc" path="res://scripts/ui.gd" id="1_ro3t7"]
 [ext_resource type="Texture2D" uid="uid://cybpwpqe55g0m" path="res://assets/sprites/crosshairs/hand_open.png" id="3_ua6yw"]
 [ext_resource type="Texture2D" uid="uid://cu6a0vhxjxauy" path="res://assets/sprites/crosshairs/hand_closed.png" id="4_75u2n"]
+[ext_resource type="Script" uid="uid://gynh40u7hpdk" path="res://scripts/health_graph.gd" id="5_75u2n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3wlde"]
 animations = [{
@@ -22,19 +23,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="UI" type="Control" unique_id=1153108352]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="UI" type="CanvasLayer" unique_id=1077784027]
 script = ExtResource("1_ro3t7")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1324503206]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -47,3 +39,17 @@ layout_mode = 2
 [node name="Crosshair" type="AnimatedSprite2D" parent="CenterContainer/Control" unique_id=791928217]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3wlde")
+
+[node name="ReputationGraph" type="Control" parent="." unique_id=718140386]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_75u2n")
+weight = 5
+
+[node name="UpdateTimer" type="Timer" parent="ReputationGraph" unique_id=1707487729]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ReputationGraph/UpdateTimer" to="ReputationGraph" method="_on_update_timer_timeout"]
